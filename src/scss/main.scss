@@ -1,16 +1,76 @@
 @import "_normalize";
 @import "_variables";
 
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=latin-ext");
 
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+  color: $white;
+  background: $blue;
+  font-family: "Roboto";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main {
+  max-width: 544px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.heading {
+  justify-self: center;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.glass {
+  
+    width: 280px;
+    height: 280px;
+    background: url('../assets/img/water-glass.svg') center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 112px;
+  }
+
+
+.button {
+  border: none;
+  font-weight: 700;
+  &--add {
+    color: black;
+    background: $white;
+    font-size: 18px;
+    width: 216px;
+    height: 48px;
+    margin-top: 48px;
+    margin-bottom: 32px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.51);
+    }
+  &--remove {
+    color: $white;
+    background: none;
+
+    font-size: 14px;
+  }
 }
