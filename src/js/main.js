@@ -32,6 +32,7 @@ counterView.innerHTML = counterValue;
 const key = new Date().toISOString().slice(0, 10);
 if (!key in localStorage) {
   counterValue = 0;
+  counterView.innerHTML = counterValue;
 } else {
   counterValue = localStorage.getItem(key);
   counterView.innerHTML = counterValue;
