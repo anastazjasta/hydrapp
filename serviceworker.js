@@ -52,8 +52,9 @@ self.addEventListener('fetch', event => {
       caches.match(event.request).then(cachedResponse => {
         if (cachedResponse) {
           return cachedResponse;
-        } else
+        } else if (event.request.cache === 'only-if-cached' && event.request.mode !== 'same-origin') {
         return fetch(event.request);
+        }
       }) 
     )
   }
