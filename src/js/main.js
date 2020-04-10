@@ -17,6 +17,27 @@ if ('serviceWorker' in navigator) {
 // place your code below
 
 
-console.log(`Hello world!`);
+const add = document.querySelector(".button--add-js");
+const remove = document.querySelector(".button--remove-js");
+let counterValue = 0;
+let counterView = document.querySelector(".glass__counter");
+
+counterView.innerHTML = counterValue;
+
+add.addEventListener('click', (e) => {
+  if (counterValue < 10) {
+    counterValue++;
+    console.log(counterValue);
+    counterView.innerHTML = counterValue;
+  }
+})
+
+remove.addEventListener('click', (e) => {
+  if (counterValue > 0) {
+  counterValue--;
+  console.log(counterValue);
+  counterView.innerHTML = counterValue;
+}
+})
 
 
