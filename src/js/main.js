@@ -27,17 +27,13 @@ const remove = document.querySelector(".button--remove-js");
 let counterValue = 0;
 let counterView = document.querySelector(".glass__counter");
 
-counterView.innerHTML = counterValue;
 
 const key = new Date().toISOString().slice(0, 10);
-if (!key in localStorage) {
-  counterValue = 0;
-  counterView.innerHTML = counterValue;
-} else {
+if (key in localStorage) {
   counterValue = localStorage.getItem(key);
-  counterView.innerHTML = counterValue;
 }
 
+counterView.innerHTML = counterValue;
 add.addEventListener("click", (e) => {
   if (counterValue < 10) {
     counterValue++;
